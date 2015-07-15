@@ -1,0 +1,34 @@
+.container
+  #loginbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2 style="margin-top:50px;" 
+    .panel.panel-info
+      .panel-heading
+        .panel-title Sign up
+      .panel-body style="padding-top:30px"
+        #login-alert.alert.alert-danger.col-sm-12 style="display:none" 
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          form#loginform.form-horizontal role="form" 
+            .input-group style=("margin-bottom: 25px") 
+              span.input-group-addon
+                i.glyphicon.glyphicon-user
+              = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter email"
+            .input-group style=("margin-bottom: 25px") 
+              span.input-group-addon
+                i.glyphicon.glyphicon-lock
+              = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter password"
+            .input-group style=("margin-bottom: 25px") 
+              span.input-group-addon
+                i.glyphicon.glyphicon-lock
+              = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Enter password confirmation"
+            .form-group style="margin-top:10px" 
+              = f.submit "Sign up", class: "btn btn-success"
+          
+          .form-group
+            .col-md-12.control
+              div style=("border-top: 1px solid#888; padding-top:15px; font-size:90%") 
+                a href="#" onclick=("$('#loginbox').hide(); $('#signupbox').show()") 
+                  = link_to "Login", new_user_session_path
+            .col-md-12.control
+              div style=("font-size:90%") 
+                a href="#" onclick=("$('#loginbox').hide(); $('#signupbox').show()") 
+                  = link_to "Forgot password?", new_password_path(resource_name)

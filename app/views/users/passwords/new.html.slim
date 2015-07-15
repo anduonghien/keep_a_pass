@@ -1,0 +1,27 @@
+.container
+  #loginbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2 style="margin-top:50px;" 
+    .panel.panel-info
+      .panel-heading
+        .panel-title Forgot your password?
+      .panel-body style="padding-top:30px"
+        #login-alert.alert.alert-danger.col-sm-12 style="display:none" 
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = devise_error_messages!
+          form#loginform.form-horizontal role="form" 
+            .input-group style=("margin-bottom: 25px") 
+              span.input-group-addon
+                i.glyphicon.glyphicon-user
+              = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter email"
+            .form-group style="margin-top:10px" 
+              = f.submit "Send me reset password instructions", class: "btn btn-success"
+          
+          .form-group
+            .col-md-12.control
+              div style=("border-top: 1px solid#888; padding-top:15px; font-size:90%") 
+                a href="#" onclick=("$('#loginbox').hide(); $('#signupbox').show()") 
+                  = link_to "Login", new_user_session_path
+            .col-md-12.control
+              div style=("font-size:90%") 
+                | Don't have an account! 
+                a href="#" onclick=("$('#loginbox').hide(); $('#signupbox').show()") 
+                  = link_to "Sign Up Here", new_user_registration_path

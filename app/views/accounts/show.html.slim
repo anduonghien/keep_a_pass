@@ -1,0 +1,24 @@
+p
+  | Title: 
+  = @account.title
+p
+  | Username: 
+  = @account.username
+p
+  | Password: 
+  = @account.password
+p
+  | Notes: 
+  = @account.note
+p
+  | Created at: 
+  = @account.created_at
+p
+  | Update at: 
+  = @account.updated_at
+br
+= link_to "Edit", edit_account_path(@account)
+br
+= link_to "Destroy", account_path(@account), method: :delete
+br
+= link_to "List accounts", accounts_path

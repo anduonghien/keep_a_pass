@@ -1,0 +1,19 @@
+= form_for @account do |f|
+  = render "/shared/form_errors", object: f.object
+  .form-group
+    = f.label :title
+    = f.text_field :title, placeholder: "Title account", class: "form-control"
+  .form-group
+    = f.label :website
+    = f.text_field :website, placeholder: "Website go to account", class: "form-control"
+  .form-group
+    = f.label :username
+    = f.text_field :username, placeholder: "Username for account", class: "form-control"
+  .form-group
+    = f.label :password
+    = f.text_field :password, placeholder: "Password for account", class: "form-control"
+  .form-group
+    = f.label :note
+    = f.text_area :note, placeholder: "Some notes for account", class: "form-control"
+  .actions 
+    = f.submit "Submit", {class: "btn btn-primary"}
