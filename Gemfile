@@ -23,6 +23,7 @@ gem 'pg'
 gem 'devise'
 gem 'slim'
 gem 'slim-rails'
+gem 'attr_encrypted'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

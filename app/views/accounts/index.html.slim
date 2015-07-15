@@ -3,7 +3,6 @@ table.table.table-striped
     th #
     th Title
     th Username
-    th Password
     th Action
   - @accounts.each do |account|
     tr
@@ -13,7 +12,5 @@ table.table.table-striped
         = account.title
       td
         = account.username
-      td
-        = account.password
       td
         = link_to "Detail", account_path(account)
