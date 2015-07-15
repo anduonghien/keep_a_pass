@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  attr_encrypted :password, key: 'duonghienan.dha@gmail.com', attribute: 'password_encrypted'
+  attr_encrypted :password, key: Rails.application.secrets.key_encrypted.to_s, attribute: 'password_encrypted'
 
   belongs_to :user
 
