@@ -5,7 +5,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :title, null: false
       t.string :website
       t.string :username, null: false
-      t.string :password, null: false
+      t.string :password_encrypted, null: false
       t.text :note
 
       t.timestamps null: false
