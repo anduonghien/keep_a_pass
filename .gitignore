@@ -12,6 +12,5 @@
 !/log/.keep
 /tmp
 /vendor/*
-Gemfile.lock
 /db/schema.rb
 /.bundle
