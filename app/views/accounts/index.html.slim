@@ -13,4 +13,6 @@ table.table.table-striped
       td
         = account.username
       td
-        = link_to "Detail", account_path(account)
+        = link_to '<button type="button" class="btn btn-primary">Detail</button>'.html_safe, account_path(account), style: "margin-right: 20px"
+        = link_to '<button type="button" class="btn btn-success">Edit</button>'.html_safe, edit_account_path(account), style: "margin-right: 20px"
+        = link_to '<button type="button" class="btn btn-danger">Delete</button>'.html_safe, account_path(account), method: :delete, data: {confirm: 'Are you sure delete this account?'}

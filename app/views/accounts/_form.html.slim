@@ -11,7 +11,7 @@
     = f.text_field :username, placeholder: "Username for account", class: "form-control"
   .form-group
     = f.label :password
-    = f.text_field :password, placeholder: "Password for account", class: "form-control"
+    = f.password_field :password, autocomplete: 'off', placeholder: "Password for account", class: "form-control"
   .form-group
     = f.label :note
     = f.text_area :note, placeholder: "Some notes for account", class: "form-control"
