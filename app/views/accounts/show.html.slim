@@ -1,3 +1,5 @@
+#copy_clipboard_success
+  = render "/shared/copy_clipboard_success"
 p
   | Title: 
   = @account.title
@@ -6,7 +8,9 @@ p
   = @account.username
 p
   | Password: 
-  = @account.password
+  input#password value= "#{@account.password}" readonly=""
+  button#show_hide Show-Hide
+  button#copy_to_clipboard data-clipboard-text="#{@account.password}" Copy clipboard
 p
   | Notes: 
   = @account.note

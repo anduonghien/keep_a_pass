@@ -2,7 +2,7 @@
   "name": "KeepAPass",
   "version": "0.0.1",
   "authors": [
-    "NVTAnh <duonghienan.dha@gmail.com>"
+    "andh <duonghienan.dha@gmail.com>"
   ],
   "description": "Keep a password",
   "license": "MIT",
@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "3.3.5"
+    "bootstrap": "3.3.5",
+    "hideshowpassword": "2.0.7",
+    "zeroclipboard": "2.2.0"
   }
 }
