@@ -2,6 +2,7 @@ table.table.table-striped
   tr
     th #
     th Title
+    th Website URL
     th Username
     th Action
   - @accounts.each do |account|
@@ -10,6 +11,8 @@ table.table.table-striped
         = account.id
       td
         = account.title
+      td
+        = account.website
       td
         = account.username
       td
