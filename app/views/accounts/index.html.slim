@@ -1,21 +1,23 @@
+#copy_clipboard_success
+  = render "/shared/copy_clipboard_success"
 table.table.table-striped
   tr
-    th #
-    th Title
-    th Website URL
-    th Username
+    th style="width: 50px" #
+    th style="width: 200px" Title
+    th style="width: 200px" Website URL
+    th style="width: 200px" Username
     th Action
   - @accounts.each do |account|
     tr
       td
         = account.id
       td
-        = account.title
+        = link_to account.title, account_path(account)
       td
         = account.website
       td
         = account.username
       td
-        = link_to '<button type="button" class="btn btn-primary">Detail</button>'.html_safe, account_path(account), style: "margin-right: 20px"
-        = link_to '<button type="button" class="btn btn-success">Edit</button>'.html_safe, edit_account_path(account), style: "margin-right: 20px"
-        = link_to '<button type="button" class="btn btn-danger">Delete</button>'.html_safe, account_path(account), method: :delete, data: {confirm: 'Are you sure delete this account?'}
+        button#copy_to_clipboard.btn.btn-primary.copy_clipboard type="button" data-clipboard-text="#{account.website}" style="margin-right: 20px" Copy website
+        button#copy_to_clipboard.btn.btn-success.copy_clipboard type="button" data-clipboard-text="#{account.username}" style="margin-right: 20px" Copy username
+        button#copy_to_clipboard.btn.btn-danger.copy_clipboard type="button" data-clipboard-text="#{account.password}" style="margin-right: 20px" Copy password
