@@ -9,8 +9,8 @@ p
 p
   | Password: 
   input#password value= "#{@account.password}" readonly=""
-  button#show_hide Show-Hide
-  button#copy_to_clipboard data-clipboard-text="#{@account.password}" Copy clipboard
+  button#show_hide.btn.btn-primary style=("margin-right: 20px; margin-left: 20px") type="button"  Show-Hide
+  button#copy_to_clipboard.btn.btn-success type="button" data-clipboard-text="#{@account.password}" Copy clipboard
 p
   | Notes: 
   = @account.note
