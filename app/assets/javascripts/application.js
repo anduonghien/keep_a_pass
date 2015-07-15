@@ -14,7 +14,7 @@
 //= require jquery_ujs 
 
 //= require bootstrap/dist/js/bootstrap.min.js
-//= require zeroclipboard/dist/ZeroClipboard.min.js
+//= require zeroclipboard
 //= require hideshowpassword/hideShowPassword.min.js
 
 //= require hide_show
